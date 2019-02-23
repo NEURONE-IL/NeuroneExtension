@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Neurone Open Web",
+    "description": "Neurone implemntado en la open web",
+    "version": "1.0",
+    "author": "Raúl Olivares",
+  
+    "icons": {
+      "48":  "icon/NdeNeurone.png"
+    },
+    
+    "options_ui": {
+      "page": "option/configuration.html",
+      "open_in_tab": true
+    },
+    
+    "browser_action": {
+          "default_title": "Neurone OW",
+          "default_icon": {
+            "38": "icon/NdeNeurone.png"
+          },  
+      "default_popup": "popup/popup.html"
+    },
+    
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content/newPage.js", "content/mouseTracker.js", "content/keyLogger.js", "content/snipper.js", "content/print.js"],
+        "run_at": "document_start"
+      }
+    ],
+
+    "background": {
+        "scripts" : [
+            "background/Global.js","background/Conexion.js", "background/Action.js","background/Bookmark.js","background/KeyLogger.js", "background/MouseTracker.js", "background/Query.js","background/Snipper.js","background/Page.js"
+        ]
+    },
+
+    "permissions": [
+        "tabs","contextMenus","<all_urls>" 
+    ]
+  }

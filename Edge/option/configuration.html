@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+    <script src="configuration.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+            body{
+                background-color: whitesmoke;
+            }
+            div.container{
+                margin-bottom: 10px;
+                border-color:#d2e0f5;
+                border-width: 4px; /* this allows you to adjust the thickness */
+                border-style: solid;
+                border-radius: 5px;
+            }
+            div.row{
+                margin-bottom: 5px;
+            }
+        </style>
+
+    <body>
+
+        <div id="Name" class="container center" >
+            <div class="row ">
+                <div class="col-xs-4 text-right"  >
+                    <h1>Neurone Configuration</h1>                   
+                </div>                
+            </div>
+        </div>
+
+        <div id="conexion" class="container .bg-info">
+            <div class="row">
+                <H2>Conexion to server</H2>
+            </div>
+
+            <div class="row col-md-12">
+                <div class="col-md-1">
+                    <dd>server: </dd>
+                </div>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="server">
+                </div>
+            </div>
+
+            <div class="row col-md-12">
+                <div class="col-md-1">
+                    <label>port: </label>
+                </div>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="port">
+                </div>
+                <div class="col-md-2">
+                        <button id="saveServer" class="btn btn-primary">Conect</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="userConfiguration" class="container">
+            <div class="row">
+                <H2>User configuration</H2>
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-1">
+                    <label>user id: </label>
+                </div>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="user">
+                </div>
+                <div class="col-md-2">
+                    <button id="saveUser" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+       
+        <div id="OnOff" class="container">
+            <div class="row">
+                <h2>Turn ON/OFF features</h2>
+            </div>
+            
+            <div class="row col-md-8">
+                <div class="col-md-3">
+                    <label>Snippers: </label>
+                </div>
+                <div class="col-md-3">
+                    <button id="Onsnipper" class="btn btn-primary">Turn On</button>
+                </div>    
+            </div>
+
+            <div class="row col-md-8">
+                <div class="col-md-3">
+                        <label>Bookmarks: </label>
+                </div>
+                <div class="col-md-3">
+                        <button id="Onbookmark" class="btn btn-primary">Turn On</button>    
+                </div>                    
+            </div>
+            
+            <div class="row col-md-8">
+                <div class="col-md-3">
+                            <label>Actions: </label>
+                </div>
+                <div class="col-md-3">
+                            <button id="Onaction" class="btn btn-primary">Turn On</button>
+                </div>   
+            </div>
+
+            <div class="row col-md-8">
+                <div class="col-md-3">
+                    <label>Key Logger: </label>
+                </div>
+                <div class="col-md-3">
+                    <button id="Onkey" class="btn btn-primary">Turn On</button>
+                </div>   
+            </div>
+            
+            <div class="row col-md-8">
+                <div class="col-md-3">
+                    <label>Mouse Traker: </label>
+                </div>
+                <div class="col-md-3">
+                    <button id="Onmouse" class="btn btn-primary">Turn On</button>
+                </div>                   
+            </div>
+ 
+            <div class="row col-md-8">
+                <div class="col-md-3">
+                    <label>Page: </label>
+                </div>
+                <div class="col-md-3">
+                    <button id="Onpage" class="btn btn-primary">Turn On</button>
+                </div>
+            </div>
+            
+            <div class="row col-md-8">
+                <div class="col-md-3">
+                    <label>Query </label>
+                </div>
+                <div class="col-md-3">
+                    <button id="Onquery" class="btn btn-primary">Turn On</button>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div id="timeConfiguration" class="container">
+            <div class="row">
+                <H2>Time lapse capture mouse tracker</H2>
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-3">
+                    <label>Time(in milliseconds): </label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="time">
+                </div>
+                <div class="col-md-2">
+                    <button id="saveTime" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+
+</body> 
+
+</html>
