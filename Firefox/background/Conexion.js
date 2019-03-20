@@ -15,9 +15,9 @@ detectBrowser.runtime.onMessage.addListener(newConfiguration);
 function newConfiguration(mensaje,sender,sendResponse){
     
     if(mensaje.txt === "conectServer"){
-        urlServer = mensaje.server+mensaje.port;
-
+        urlServer = mensaje.server;
         Conexion = true;
+        console.log(urlServer);
     }
 
     if(mensaje.txt === "newUser"){

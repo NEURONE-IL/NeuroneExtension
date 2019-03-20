@@ -94,15 +94,20 @@ function ConectToServer(){
     var server = document.getElementById("server");
     var port = document.getElementById("port");
 
+    var url = server.value+":"+port.value+"/";
+
+
     let mensaje = {
         txt : "conectServer",
-        server : server.value,
-        port: port.value
+        server : url
     }
 
     detectBrowser.runtime.sendMessage(mensaje,   function (response) {
         //console.log(response);
     });
+
+    var alert = 'alert("save new url: '+url+' ")';
+    browser.tabs.executeScript({code : alert});
 }
 
 //save new user
@@ -118,6 +123,9 @@ function saveUser(){
     detectBrowser.runtime.sendMessage(mensaje,   function (response) {
         //console.log(response);
     });
+
+    var alert = 'alert("save new user: '+user.value+' ")';
+    browser.tabs.executeScript({code : alert});
 }
 
 function OnOff(arg){
