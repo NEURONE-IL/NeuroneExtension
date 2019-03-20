@@ -22,7 +22,7 @@ function fragmentOfText(){
             textHtml: div.innerHTML
         };
 
-        detectBrowser.runtime.sendMessage(mensaje);
+        chrome.runtime.sendMessage(mensaje);
 
     }
 

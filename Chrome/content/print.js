@@ -8,7 +8,7 @@ function Print(){
 
 
 
-    detectBrowser.runtime.sendMessage({txt: "getSnippers"}, function(response) {
+    chrome.runtime.sendMessage({txt: "getSnippers"}, function(response) {
 
         var actualUrl = window.location.toString();
         Snippers = response.result;

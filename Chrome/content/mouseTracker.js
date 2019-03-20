@@ -14,7 +14,7 @@ window.addEventListener('click' , mouseClick);
 window.setTimeout(setCaptureTime, time);
 
 //update time of lapse 
-detectBrowser.runtime.sendMessage({txt: "getTimeCapture"}, function(response) {
+chrome.runtime.sendMessage({txt: "getTimeCapture"}, function(response) {
 
     timePeriod = response.result;
     //console.log(timePeriod);
@@ -47,7 +47,7 @@ function mousePosition(m){
     };
     
     if(capture){
-        detectBrowser.runtime.sendMessage(mensaje);
+        chrome.runtime.sendMessage(mensaje);
     }
      
 }
@@ -71,7 +71,7 @@ function mouseClick(m){
     };
 
     if(capture){
-        detectBrowser.runtime.sendMessage(mensaje);         
+        chrome.runtime.sendMessage(mensaje);         
     }
     
 }

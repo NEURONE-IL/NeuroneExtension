@@ -28,7 +28,7 @@ window.listURLs = new Array();
 window.listBookmarks = new Array();
 window.listSnippers = new Array();
 
-window.timeCapture = 30000; // 30 seconds
+window.timeCapture = 3000; // 3 seconds
 
 /*////////////////////////////////////////////////////////////////
                             Functions
