@@ -94,13 +94,16 @@ function ConectToServer(){
     var server = document.getElementById("server");
     var port = document.getElementById("port");
 
+    var url = server.value+":"+port.value+"/";
+
     let mensaje = {
         txt : "conectServer",
-        server : server.value,
-        port: port.value
+        server : url
     }
 
     detectBrowser.runtime.sendMessage(mensaje);
+
+    alert("save new url: "+url+" ");
 }
 
 //save new user
@@ -114,6 +117,8 @@ function saveUser(){
     }
     
     detectBrowser.runtime.sendMessage(mensaje);
+
+    alert("save new user: "+user.value+" ");
 }
 
 //Turn on/off features of extension
