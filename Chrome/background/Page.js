@@ -59,7 +59,7 @@ function ChangePage(tabId, statusTab, oldtab){
                     page.finish++;
                     //save web page
                     var requestWeb = new XMLHttpRequest();
-                    requestWeb.open("POST", urlServer+"/webpage", true);
+                    requestWeb.open("POST", urlServer+"webpage", true);
                     requestWeb.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                     requestWeb.send(JSON.stringify({
                         "userName": user,

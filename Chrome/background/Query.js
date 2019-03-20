@@ -28,7 +28,7 @@ function newQuery(mensaje,sender,sendResponse){
 
                 //save query
                 var requestQuery = new XMLHttpRequest();
-                requestQuery.open("POST", urlServer+"/query", true);
+                requestQuery.open("POST", urlServer+"query", true);
                 requestQuery.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 requestQuery.send(JSON.stringify({
                     "userName": user,

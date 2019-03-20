@@ -21,7 +21,7 @@ function inputMouse(mensaje,sender,sendResponse){
             timestamp.getDate();
             //save mouse coordenates
             var requestMouse = new XMLHttpRequest();
-            requestMouse.open("POST", urlServer+"/mouseposition", true);
+            requestMouse.open("POST", urlServer+"mouseposition", true);
             requestMouse.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             requestMouse.send(JSON.stringify({
                 "userName": user,
@@ -45,7 +45,7 @@ function inputMouse(mensaje,sender,sendResponse){
     
             //Save Mouse clicks
             var requestClicks = new XMLHttpRequest();
-            requestClicks.open("POST", urlServer+"/mouseclick", true);
+            requestClicks.open("POST", urlServer+"mouseclick", true);
             requestClicks.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             requestClicks.send(JSON.stringify({
                 "userName": user,
