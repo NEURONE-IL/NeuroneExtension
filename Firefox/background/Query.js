@@ -19,6 +19,8 @@ function newQuery(mensaje,sender,sendResponse){
             timestamp.getDate();
 
             var url =  sender.tab.url;
+            var title = sender.tab.title;
+
             var split = url.split('q=')[1];
             if(split!=null){
                 split = split.split('&')[0];
@@ -31,6 +33,8 @@ function newQuery(mensaje,sender,sendResponse){
                 requestQuery.send(JSON.stringify({
                     "userName": user,
                     "query": replaced,
+                    "url" : url,
+                    "title" : title,
                     "time": timestamp
                 }));
             }
