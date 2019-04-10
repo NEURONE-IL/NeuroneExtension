@@ -22,7 +22,7 @@ function CreateNewTab(tab){
         timestamp.getDate();
         //save action
         var requestAction = new XMLHttpRequest();
-	    requestAction.open("POST", urlServer+"/action", true);
+	    requestAction.open("POST", urlServer+"action", true);
         requestAction.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         requestAction.send(JSON.stringify({
            	"userName": user,
@@ -49,7 +49,7 @@ function ChangeTab(tabId, StatusTab, tab){
 
             //save Change Page in the tab
             var requestAction = new XMLHttpRequest();
-            requestAction.open("POST", urlServer+"/action", true);
+            requestAction.open("POST", urlServer+"action", true);
             requestAction.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             requestAction.send(JSON.stringify({
                 "userName": user,
@@ -78,7 +78,7 @@ function CloseTab(tabId, info){
 
         //save action
         var requestAction = new XMLHttpRequest();
-	    requestAction.open("POST", urlServer+"/action", true);
+	    requestAction.open("POST", urlServer+"action", true);
         requestAction.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         requestAction.send(JSON.stringify({
            	"userName": user,

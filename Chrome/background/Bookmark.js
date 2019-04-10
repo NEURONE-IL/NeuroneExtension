@@ -25,7 +25,7 @@ function DeleteBookmark(mensaje,sender,sendResponse){
                 console.log(mensaje.idBookmark);
 
                 var requestBookmark = new XMLHttpRequest();
-                requestBookmark.open("POST", urlServer+"/bookmark", true);
+                requestBookmark.open("POST", urlServer+"bookmark", true);
                 requestBookmark.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 requestBookmark.send(JSON.stringify({
                     "userName": user,
@@ -77,7 +77,7 @@ function saveBookmar(page){
            
                 //send to server
                 var requestBookmark = new XMLHttpRequest();
-                requestBookmark.open("POST", urlServer+"/bookmark", true);
+                requestBookmark.open("POST", urlServer+"bookmark", true);
                 requestBookmark.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 requestBookmark.send(JSON.stringify({
                     "userName": user,

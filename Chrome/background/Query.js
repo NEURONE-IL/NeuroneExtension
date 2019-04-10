@@ -21,6 +21,8 @@ function newQuery(mensaje,sender,sendResponse){
             timestamp.getDate();
 
             var url =  sender.tab.url;
+            var title = sender.tab.title;
+
             var split = url.split('q=')[1];
             if(split!=null){
                 split = split.split('&')[0];
@@ -28,17 +30,21 @@ function newQuery(mensaje,sender,sendResponse){
 
                 //save query
                 var requestQuery = new XMLHttpRequest();
-                requestQuery.open("POST", urlServer+"/query", true);
+                requestQuery.open("POST", urlServer+"query", true);
                 requestQuery.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 requestQuery.send(JSON.stringify({
                     "userName": user,
                     "query": replaced,
+                    "url" : url,
+                    "title" : title,
                     "time": timestamp
                 }));
 
                 var query = {
                     userName: user,
                     query: replaced,
+                    url: url,
+                    title: title,
                     time: timestamp
                 }
 
