@@ -34,14 +34,13 @@ function LoadFavorites(){
         var li = document.createElement("li");
         li.setAttribute('class','list-group-item d-flex');
   
-        var div_row =document.createElement("div");
-        div_row.setAttribute('class','row');
+        var div_c0 =document.createElement("div");
+        div_c0.setAttribute('class','col-sm-8');
         var div_c1 =document.createElement("div");
-        div_c1.setAttribute('class','col-sm-10 ');
+        div_c1.setAttribute('class','col-sm-2');
         var div_c2 =document.createElement("div");
         div_c2.setAttribute('class','col-sm-1');
-        var div_der =document.createElement("div");
-        div_der.setAttribute('class','well pull-right');
+
 
         var name_b = document.createElement("p");
         name_b.setAttribute('id','url'+favoriteBookmarks.indexOf(b)+'');
@@ -54,13 +53,21 @@ function LoadFavorites(){
         button_b.setAttribute('value', favoriteBookmarks.indexOf(b) );
         button_b.innerText = "delete";
         
+        var button_o = document.createElement("button");
+        button_o.setAttribute('type','button');
+        button_o.setAttribute('id','open'+favoriteBookmarks.indexOf(b)+'');
+        button_o.setAttribute('class','btn btn-primary');
+        button_o.setAttribute('value', b.urlpage);
+        button_o.innerText = "open";
+
         newList.appendChild(li);
+        li.appendChild(div_c0);
+        div_c0.appendChild(name_b);
         li.appendChild(div_c1);
-        div_c1.appendChild(name_b);
+        div_c1.appendChild(button_b);
         li.appendChild(div_c2);
-        div_c2.appendChild(div_der);
-        div_der.appendChild(button_b);
-         
+        div_c2.appendChild(button_o);
+
     }
 
     var titleSnipper = document.getElementById("divSnippers");
@@ -74,9 +81,11 @@ function LoadFavorites(){
         li.setAttribute('class','list-group-item d-flex');
 
         var div_c3 =document.createElement("div");
-        div_c3.setAttribute('class','col-sm-10');
+        div_c3.setAttribute('class','col-sm-8');
         var div_c4 =document.createElement("div");
-        div_c4.setAttribute('class','col-sm-1 float-right');
+        div_c4.setAttribute('class','col-sm-2');
+        var div_open =document.createElement("div");
+        div_open.setAttribute('class','col-sm-1');
 
         var name_s = document.createElement("p");
         name_s.setAttribute('id','snipper'+favoriteSnippers.indexOf(s)+'');
@@ -88,11 +97,21 @@ function LoadFavorites(){
         button_s.setAttribute('class','btn btn-primary');
         button_s.innerText = "delete";
 
+        var button_os = document.createElement("button")
+        button_os.setAttribute('type','button');
+        button_os.setAttribute('id','openSnipper'+favoriteSnippers.indexOf(s)+'');
+        button_os.setAttribute('class','btn btn-primary');
+        button_os.setAttribute('value', s.urlPage);
+        button_os.innerText = "open";
+
         ul.appendChild(li);
         li.appendChild(div_c3);
         div_c3.appendChild(name_s);
         li.appendChild(div_c4);
         div_c4.appendChild(button_s);
+        li.appendChild(div_open);
+        div_open.appendChild(button_os);
+
     }
 
     //select bookmark for delete
@@ -100,6 +119,14 @@ function LoadFavorites(){
         //console.log(favoriteBookmarks.indexOf(fb))
         document.getElementById("delete"+favoriteBookmarks.indexOf(fb)).addEventListener("click", function(e){
             DeleteBookmark(e);
+        }, false);
+    }
+
+    //open bookmark
+    for(ob of favoriteBookmarks){
+        //console.log(favoriteBookmarks.indexOf(fb))
+        document.getElementById("open"+favoriteBookmarks.indexOf(ob)).addEventListener("click", function(e){
+            openSnippet(e);
         }, false);
     }
 
@@ -111,6 +138,14 @@ function LoadFavorites(){
         }, false);
     }
 
+        //select Snippers for delete
+        for(s of favoriteSnippers){
+            //console.log(favoriteBookmarks.indexOf(fb))
+            document.getElementById("openSnipper"+favoriteSnippers.indexOf(s)).addEventListener("click", function(e){
+                openSnippet(e);
+            }, false);
+        }
+    
 }
 
 
@@ -153,6 +188,24 @@ function DeleteSnipper(arg){
         snipperElement.parentNode.parentNode.parentNode.removeChild(snipperElement.parentNode.parentNode);
     }
 
-
 }
 
+function openLink(arg) {
+    var text = arg.target.id; 
+    var id = text.substring(4, text.length);
+    console.log("id bookmark: "+ id);
+
+    var urlBookmark = document.getElementById("url"+id);
+    var link = urlBookmark.innerText;
+    console.log("link: "+ link);
+
+    detectBrowser.tabs.create({active: true, url: link});
+}
+
+function openSnippet(arg) {
+
+    var link = arg.target.attributes.value.value;
+    console.log(link);
+    detectBrowser.tabs.create({active: true, url: link});
+
+}
