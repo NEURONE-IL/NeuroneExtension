@@ -138,13 +138,13 @@ function LoadFavorites(){
         }, false);
     }
 
-        //select Snippers for delete
-        for(s of favoriteSnippers){
-            //console.log(favoriteBookmarks.indexOf(fb))
-            document.getElementById("openSnipper"+favoriteSnippers.indexOf(s)).addEventListener("click", function(e){
-                openSnippet(e);
-            }, false);
-        }
+    //select Snippers for delete
+    for(s of favoriteSnippers){
+        //console.log(favoriteBookmarks.indexOf(fb))
+        document.getElementById("openSnipper"+favoriteSnippers.indexOf(s)).addEventListener("click", function(e){
+            openSnippet(e);
+        }, false);
+    }
     
 }
 
