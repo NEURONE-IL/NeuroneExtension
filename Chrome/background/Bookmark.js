@@ -48,6 +48,7 @@ function DeleteBookmark(mensaje,sender,sendResponse){
 
 function saveBookmar(page){  
     if(bookmarkOn){
+        
         if(page.pageUrl != null){
             let timestamp = new Date();
             timestamp.getDate();
